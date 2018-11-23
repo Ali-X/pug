@@ -3,13 +3,14 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var pug = require('gulp-pug');
+var plumber = require('gulp-plumber');
 
 sass.compiler = require('node-sass');
 
 gulp.task('sass', function () {
     return gulp.src('app/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./html'));
 });
 
 gulp.task('watch', function () {
@@ -19,6 +20,7 @@ gulp.task('watch', function () {
 
 gulp.task('pug', function () {
     return gulp.src('app/pug/*.pug')
+        .pipe(plumber())
         .pipe(pug())
         .pipe(gulp.dest('./html'));
 });
