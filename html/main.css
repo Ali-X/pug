@@ -1,2 +1,117 @@
-h1 {
-  color: rebeccapurple; }
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+* {
+  margin: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+html {
+  min-width: 360px;
+  padding-top: 8.3rem;
+  background-color: #ecedee;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.fa {
+  padding-top: 0.4rem;
+  padding-left: 0.2rem;
+  font-size: 1.6rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+}
+
+.fa:hover {
+  color: #565d67;
+  background-color: white;
+}
+
+.fa-twitter {
+  margin: 0 1rem;
+}
+
+.menu-block {
+  margin: 0 auto 8.3rem auto;
+  width: 24.5rem;
+  background-color: #565d67;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.menu-block__cross {
+  padding: 2.5rem 2rem 2.1rem 0;
+  text-align: right;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.menu-block__cross:hover {
+  text-decoration: underline;
+}
+
+.menu-block__items {
+  margin: auto;
+  width: 12.5rem;
+}
+
+.menu-block__item {
+  display: block;
+  margin-bottom: 5rem;
+  font-size: 1.6rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-block__item:hover {
+  padding-left: 2.5rem;
+  padding-bottom: 2.5rem;
+  font-size: 2rem;
+  border-bottom: 1px solid white;
+}
+
+.menu-block__separator {
+  display: block;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid white;
+}
+
+.menu-block__contacts {
+  margin: auto;
+  width: 12.5rem;
+}
+
+.menu-block__contact {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  text-transform: lowercase;
+  letter-spacing: normal;
+}
+
+.menu-block__socials {
+  margin: auto;
+  width: 12.5rem;
+  margin-top: 3rem;
+  padding-bottom: 6.3rem;
+}

@@ -1,3 +1,64 @@
-h1 {
-  color: rebeccapurple;
+.menu-block {
+  margin: 0 auto 8.3rem auto;
+  width: 24.5rem;
+  background-color: $dark-gray-color;
+  font-family: $main-font-family;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+
+  &__cross {
+    padding: 2.5rem 2rem 2.1rem 0;
+    text-align: right;
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__items {
+    @include center-block($menu-block-size);
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 5rem;
+    font-size: 1.6rem;
+    transition: all 0.2s ease-in-out;;
+
+    &:hover {
+      padding-left: 2.5rem;
+      padding-bottom: 2.5rem;
+      font-size: 2rem;
+      border-bottom: 1px solid white;
+    }
+  }
+
+  &__separator {
+    display: block;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid white;
+  }
+
+  &__contacts {
+    @include center-block($menu-block-size);
+  }
+
+  &__contact {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    text-transform: lowercase;
+    letter-spacing: normal;
+  }
+
+  &__socials {
+    @include center-block($menu-block-size);
+    margin-top: 3rem;
+    padding-bottom: 6.3rem;
+  }
 }

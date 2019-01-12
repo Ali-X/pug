@@ -5,14 +5,25 @@ var sass = require('gulp-sass');
 var pug = require('gulp-pug');
 var plumber = require('gulp-plumber');
 var browserSync = require("browser-sync");
+var rename = require("gulp-rename");
+var autoprefixer = require('gulp-autoprefixer');
 
 sass.compiler = require('node-sass');
 
-gulp.task('sass', function () {
-    return gulp.src('app/sass/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./html'))
-        .pipe(browserSync.reload({ stream: true }));
+gulp.task("sass", function() {
+    gulp
+      .src("app/sass/main.scss")
+      .pipe(plumber())
+      .pipe(sass({ outputStyle: "expanded" }))
+      .pipe(rename("main.css"))
+      .pipe(autoprefixer({
+          browsers: ['last 20 versions'],
+          cascade: false
+      }))
+      .pipe(gulp.dest("./html"))
+      .pipe(browserSync.reload({ stream: true }));
+
+    gulp.start('pug');
 });
 
 gulp.task('watch', ["sass", "browser"], function () {
@@ -24,7 +35,7 @@ gulp.task('watch', ["sass", "browser"], function () {
 gulp.task("browser", function() {
     browserSync({
         server: { baseDir: "html" },
-        notify: false
+        notify: true
     });
 });
 

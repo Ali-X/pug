@@ -1,7 +1,30 @@
 doctype html
+- var authorised = false
 html
     head
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
         style
             include ../../html/main.css
-        h1 My Site
-        p Welcome to my super lame site.
+        div(class='menu-block')
+            .menu-block__cross x
+            .menu-block__items
+                a(class='menu-block__item' href='#') Home
+                a(class='menu-block__item' href='#') About
+                a(class='menu-block__item' href='#') Work
+                a(class='menu-block__item' href='#') Services
+                a(class='menu-block__item' href='#') Team
+                a(class='menu-block__item' href='#') Contact
+
+                if authorized
+                    a(class='menu-block__item' href='#') Logout
+                else
+                    a(class='menu-block__item' href='#') Login
+
+                div(class='menu-block__separator')
+            .menu-block__contacts
+                .menu-block__contact (912) 555-1234
+                .menu-block__contact office@website.com
+            .menu-block__socials
+                a(class='fa fa-facebook' href='#')
+                a(class='fa fa-twitter' href='#')
+                a(class='fa fa-google' href='#')

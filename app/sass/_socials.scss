@@ -1,0 +1,22 @@
+.fa {
+  padding-top: 0.4rem;
+  padding-left: 0.2rem;
+  font-size: 1.6rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+
+  &:hover {
+    color: $dark-gray-color;
+    background-color: white;
+  }
+}
+
+.fa-twitter {
+  margin: 0 1rem;
+}
