@@ -8,14 +8,10 @@ html
         div(class='menu-block')
             .menu-block__cross x
             .menu-block__items
-                a(class='menu-block__item' href='#') Home
-                a(class='menu-block__item' href='#') About
-                a(class='menu-block__item' href='#') Work
-                a(class='menu-block__item' href='#') Services
-                a(class='menu-block__item' href='#') Team
-                a(class='menu-block__item' href='#') Contact
+                each val in ['Home', 'About', 'Work', 'Services', 'Team', 'Contact']
+                    a(class='menu-block__item' href='#')= val
 
-                if authorized
+                if authorised
                     a(class='menu-block__item' href='#') Logout
                 else
                     a(class='menu-block__item' href='#') Login
