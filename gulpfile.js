@@ -10,6 +10,8 @@ var autoprefixer = require('gulp-autoprefixer');
 
 sass.compiler = require('node-sass');
 
+gulp.task('sass-pug', ["sass", "pug"]);
+
 gulp.task("sass", function() {
     gulp
       .src("app/sass/main.scss")
@@ -22,20 +24,19 @@ gulp.task("sass", function() {
       }))
       .pipe(gulp.dest("./html"))
       .pipe(browserSync.reload({ stream: true }));
-
-    gulp.start('pug');
 });
 
 gulp.task('watch', ["sass", "browser"], function () {
     gulp.watch('app/sass/*.scss', ['sass']);
     gulp.watch('app/pug/*.pug', ['pug']);
-    gulp.watch("src/index.html", browserSync.reload);
+    gulp.watch("html/index.html", browserSync.reload);
+    gulp.watch("html/main.css", browserSync.reload);
 });
 
 gulp.task("browser", function() {
     browserSync({
         server: { baseDir: "html" },
-        notify: true
+        notify: false
     });
 });
 
